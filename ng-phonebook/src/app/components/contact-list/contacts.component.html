@@ -1,0 +1,6 @@
+<app-contact-form [contact]="selectedContact" (userAdded)='handleUpdate()' [mode]="selectedContact?.firstName?'edit':'create'"></app-contact-form>
+<div *ngFor="let contact of this.contacts">
+  {{contact.firstName}}, {{contact.lastName}}, {{contact.email}}
+  <button class='btn btn-primary' (click)='editContact(contact)'>Edit</button>
+  <button class='btn btn-primary' (click)='deleteContact(contact)'>Delete</button>
+</div>
